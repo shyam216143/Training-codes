@@ -10,18 +10,17 @@ class Student:
 		dictionary[self.regd]=[self.name,self.height]
 
 menu=""
-while (menu!=6):
-	print("""
-=======Menu=======
+print("""
 1. Add Student Height.
-2. Modify Student Name.
-3. Modify Student Height.
-4. Remove Student record.
-5. Display the records.
-6. Exit.
+2. Modify Student Height.
+3. Remove Student record.
+4. Display the records.
+5. Exit.
 """)
+menu=int(input("Enter your choice: "))
+while (menu!=5):
+	
 	try:
-		menu=int(input("Enter your choice: "))
 		if menu==1:
 			student_regd=input("Enter the student registration number: ")
 			student_name=input("Enter the student name: ")
@@ -30,20 +29,12 @@ while (menu!=6):
 		elif menu==2:
 			modify_regd=input("Enter the registration number: ")
 			if modify_regd in dictionary:
-				modify_name=input("Enter the modified name: ")
-				dictionary[modify_regd][0]=modify_name
-				print("Name Modified Successfully")
-			else:
-				print("Please enter a valid Registration Number.")
-		elif menu==3:
-			modify_regd=input("Enter the registration number: ")
-			if modify_regd in dictionary:
 				modify_height=input("Enter the modified height: ")
 				dictionary[modify_regd][1]=modify_height
 				print("Name Modified Successfully")
 			else:
 				print("Please enter a valid Registration Number.")
-		elif menu==4:
+		elif menu==3:
 			if dictionary=={}:
 				print("Cannot Remove from an empty dictioanry.")
 			else:
@@ -53,9 +44,7 @@ while (menu!=6):
 					print("Removed Successfully")
 				else:
 					print("Please enter a valid Registration Number.")
-		elif menu==5:
+		elif menu==4:
 			print(dictionary)
-		elif menu==6:
-			sys.exit()
 	except ValueError:
 		print("Please enter a valid number.")
