@@ -1,0 +1,17 @@
+import random
+import string
+
+
+def password():
+    leng = int(input("enter the length of password"))
+    lc = string.ascii_lowercase
+    up = string.ascii_uppercase
+    dig = string.digits
+    punch = string.punctuation
+    combine = lc + up + dig + punch
+    temp = random.sample(combine, leng)
+    randPassword = "".join(temp)
+    print(randPassword)
+
+
+password()
